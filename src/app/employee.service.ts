@@ -46,7 +46,6 @@ export class EmployeeService {
 
   constructor() { }
 
-
   getEmployee(id: number): Employee {
     return this.listEmployess.value.find(e => e.id === id);
   }
