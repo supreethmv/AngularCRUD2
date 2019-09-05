@@ -49,10 +49,7 @@ export class EmployeeService {
   cast = this.listEmployess.asObservable();
 
   constructor(private httpclient:HttpClient) {
-    //this.listEmployess = this.httpclient.get<Employee[]>('http://localhost:3000/products');
-    //this.listEmployess = this.httpclient.get<Employee[]>('http://localhost:3000/products');
-    //this.httpclient.get<Employee[]>('http://localhost:3000/products').subscribe((data)=>this.listEmployess.next(data))
-    this.httpclient.get<Employee[]>("assets/raw_data/emps.json").subscribe((data)=>{this.listEmployess.next(data)});
+    this.httpclient.get<Employee[]>("../assets/raw_data/emps.json").subscribe((data)=>{this.listEmployess.next(data)});
     console.log(this.listEmployess.value);
   }
 

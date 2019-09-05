@@ -16,8 +16,9 @@ export class ListEmployeesComponent implements OnInit {
   constructor(private _employeeService: EmployeeService, private _router: Router) { }
 
   ngOnInit() {
-    //this._employeeService.cast.subscribe(emplist=>this.employees=emplist);
-    this._employeeService.getEmployees().subscribe((emplist)=>{this.employees=emplist});
+    this._employeeService.cast.subscribe(emplist=>this.employees=emplist);
+    console.log(this.employees);
+    //this._employeeService.getEmployees().subscribe((emplist)=>{this.employees=emplist});
   }
 
   onClick(employeeId: number){
