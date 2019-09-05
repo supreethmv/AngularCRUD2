@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Employee } from 'src/app/models/employee.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { EmployeeService } from 'src/app/employee.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class DisplayEmployeeComponent implements OnInit {
 
   @Input() employee:Employee;
 
-  constructor(private _router: Router, private _route:ActivatedRoute) { }
+  constructor(private _router: Router, private _route:ActivatedRoute, private _employeeService:EmployeeService) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,8 @@ export class DisplayEmployeeComponent implements OnInit {
     this._router.navigate(['/edit',this.employee.id]);
   }
 
-
+  deleteEmployee(){
+    this._employeeService.deleteEmployee(this.employee.id);
+  }
 
 }

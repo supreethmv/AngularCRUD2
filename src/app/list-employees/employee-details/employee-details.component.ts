@@ -24,7 +24,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   getNextEmployee() {
-    if (this._id < 3) {
+    if (this._id < this._employeeService.listEmployess.value.length) {
       this._id = this._id + 1;
     } else {
       this._id = 1;
